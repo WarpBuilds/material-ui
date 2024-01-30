@@ -22,7 +22,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [warp-ubuntu-latest-x64-16x]
+        os: [ubuntu-latest]
     steps:
       - run: echo "${{ github.actor }}"
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1

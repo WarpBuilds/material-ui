@@ -6,11 +6,6 @@ on:
       # Renovate branches are always Pull Requests.
       # We don't need to run CI twice (push+pull_request)
       - 'renovate/**'
-  pull_request:
-    paths-ignore:
-      # should sync with ci-check.yml as a workaround to bypass github checks
-      - 'docs/**'
-      - 'examples/**'
 
 permissions: {}
 
@@ -22,7 +17,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [warp-ubuntu-latest-x64-4x, warp-ubuntu-latest-x64-16x]
+        os: [warp-ubuntu-latest-x64-4x, warp-ubuntu-latest-x64-2x, warpdev-ubuntu-latest-x64-4x, warpdev-ubuntu-latest-x64-2x, ubuntu-latest]
     steps:
       - run: echo "${{ github.actor }}"
       - name: Log Ram and CPU
